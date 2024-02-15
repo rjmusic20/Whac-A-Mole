@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+          background-image: url('mario-bg.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed; /* Optional: Fixed background */
+        }
+      </style>
+</head>
+<body>
+    <form id="loginForm" onsubmit="return redirectToDashboard()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        function redirectToDashboard() {
+            // Add your authentication logic here
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Example: Check if username and password match (replace with your actual authentication logic)
+            if (username === 'rj' && password === 'password') {
+                // Redirect to the dashboard page
+                window.location.href = 'index.html' ;
+                return false; // Prevent the form from submitting
+            } else {
+                // Display an error message or handle authentication failure
+                alert('Invalid username or password');
+                return false; // Prevent the form from submitting
+            }
+        }
+    </script>
+</body>
+</html>
